@@ -1,0 +1,9 @@
+.carousel {
+  width: 80%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.carousel-item {
+   height: 33em;
+}

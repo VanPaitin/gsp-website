@@ -1,0 +1,10 @@
+ul.navbar {
+  background: brown;
+}
+
+ul.navbar .nav-item a {
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-weight: bolder;
+  font-family: serif;
+}
