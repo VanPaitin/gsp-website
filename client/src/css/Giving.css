@@ -1,0 +1,55 @@
+.backdrop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+.backdrop-image {
+  height: 100%;
+  width: 100%;
+}
+
+.backdrop-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.flower {
+  height: 36vh;
+  width: 100%;
+}
+
+.giving-details {
+  height: 56vh;
+  width: 100%;
+  background-color: white;
+  margin-top: 0.5em;
+  padding-top: 10%;
+}
+
+button address {
+  font-style: italic;
+  font-family: serif;
+}
+
+button address a {
+  color: white;
+  text-decoration: underline;
+}
+
+button address a:hover {
+  color: white;
+}
+
+.contact {
+  cursor: default !important;
+}
+
+.btn-primary.contact:hover {
+  background: #007bff;
+}
