@@ -5,6 +5,7 @@ export default class WatchLive extends Component {
     return(
       <div>
         <iframe
+          title="RCCG GSP Video"
           width="1150"
           height="647"
           src="https://www.youtube.com/embed/UFcHp5Tc7uI"

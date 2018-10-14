@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   font-family: serif;
+  padding-top: 3em;
 }
 .about-text {
   color: #FFFFFF;
