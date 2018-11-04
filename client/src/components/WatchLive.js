@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class WatchLive extends Component {
   render() {
     return(
-      <div>
+      <div className="watch-live">
         <iframe
           title="RCCG GSP Video"
           width="1150"

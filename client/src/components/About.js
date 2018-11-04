@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import ImageComponent from './ImageComponent'
 import '../css/About.css';
 import about from '../images/about.jpg';
 
 export default class About extends Component {
   render() {
     return(
-      <div className="about">
+      <ImageComponent>
         <img src={about} alt=""/>
         <div className="about-text">
           <h1>ABOUT US</h1>
@@ -16,7 +17,7 @@ export default class About extends Component {
             full of God chasers – people who are after the heart God.
           </p>
         </div>
-      </div>
+      </ImageComponent>
     )
   }
 }

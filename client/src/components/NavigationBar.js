@@ -15,6 +15,9 @@ export default class NavigationBar extends Component {
               <NavLink tag={Link} to="/">Home</NavLink>
             </NavItem>
             <NavItem>
+              <NavLink tag={Link} to='/about'>About Us</NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink href="#">Live Services</NavLink>
             </NavItem>
             <NavItem>
@@ -25,9 +28,6 @@ export default class NavigationBar extends Component {
             </NavItem>
             <NavItem>
               <NavLink tag={Link} to='/members'>Member Center</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} to='/about'>About Us</NavLink>
             </NavItem>
           </Nav>
         </div>

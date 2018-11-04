@@ -1,0 +1,11 @@
+.members {
+  margin-top: 50px;
+}
+
+.row {
+  margin-top: 1em;
+}
+
+.form-group.btn, .registerButtonLabel {
+  display: block;
+}

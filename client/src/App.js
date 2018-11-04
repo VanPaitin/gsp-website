@@ -3,9 +3,10 @@ import { Route } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import Home from './components/Home';
 import About from './components/About';
-import Services from './components/Services'
-import Giving from './components/Giving'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Services from './components/Services';
+import Giving from './components/Giving';
+import Members from './components/Members';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.css';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
         <Route path='/about' component={About} />
         <Route path='/services' component={Services} />
         <Route path='/giving' component={Giving} />
+        <Route path='/members' component={Members} />
       </div>
     );
   }
