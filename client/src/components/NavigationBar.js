@@ -18,10 +18,10 @@ export default class NavigationBar extends Component {
               <NavLink tag={Link} to='/about'>About Us</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Live Services</NavLink>
+              <NavLink tag={Link} to="/services">Our Services</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="/services">Our Services</NavLink>
+              <NavLink tag={Link} to="/live">Live Services</NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={Link} to='/giving'>Online Giving</NavLink>

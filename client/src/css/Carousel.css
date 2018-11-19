@@ -1,9 +1,10 @@
 .carousel {
-  width: 80%;
+  width: 90%;
+  height: 90vh;
   overflow: hidden;
   margin: auto;
 }
 
 .carousel-item {
-   height: 33em;
+   height: 40em;
 }

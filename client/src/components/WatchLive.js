@@ -8,9 +8,9 @@ export default class WatchLive extends Component {
           title="RCCG GSP Video"
           width="1150"
           height="647"
-          src="https://www.youtube.com/embed/UFcHp5Tc7uI"
+          src="https://www.youtube.com/embed/hhMSxp368QM"
           frameBorder="0"
-          allow="autoplay; encrypted-media"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen>
         </iframe>
       </div>
