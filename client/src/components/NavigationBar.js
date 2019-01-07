@@ -10,7 +10,7 @@ export default class NavigationBar extends Component {
       <div>
         <div>
           <Nav className='justify-content-center navbar'>
-            <NavLink tag={Link} to="/" className="logo"><img src={logo} alt="logo" style={{width: '40px', height: '40px'}}/></NavLink>
+            <NavLink tag={Link} to="/" className="logo"><img src={logo} alt="logo" style={{width: '50px', height: '40px'}}/></NavLink>
             <NavItem>
               <NavLink tag={Link} to="/">Home</NavLink>
             </NavItem>
@@ -26,9 +26,9 @@ export default class NavigationBar extends Component {
             <NavItem>
               <NavLink tag={Link} to='/giving'>Online Giving</NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink tag={Link} to='/members'>Member Center</NavLink>
-            </NavItem>
+            {/*<NavItem>*/}
+              {/*<NavLink tag={Link} to='/members'>Member Center</NavLink>*/}
+            {/*</NavItem>*/}
           </Nav>
         </div>
       </div>

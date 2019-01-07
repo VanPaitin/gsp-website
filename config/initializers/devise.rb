@@ -3,13 +3,8 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  # The secret key used by Devise. Devise uses this key to generate
-  # random tokens. Changing this key will render invalid all existing
-  # confirmation, reset password and unlock tokens in the database.
-  # Devise will use the `secret_key_base` as its `secret_key`
-  # by default. You can change it below and use your own secret key.
-  # config.secret_key = '8baec39c890b119327d53b9d9edb0dced8bc4480afe229b74c1463e1842d093df8766d7665fc95b8a698b941f0718df9c8c26980f5f06d50afc245bbb531caa9'
 
+  # config.authentication_keys = [ :email, :password ]
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -18,7 +13,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'rccgtgsp@gmail.com'
+  config.mailer_sender = 'admin@rccggsp.com'
 
   # Configure the class responsible to send e-mails.
   config.mailer = 'Devise::Mailer'
@@ -54,9 +49,6 @@ Devise.setup do |config|
   # to authenticate or find a user. Default is :email.
   config.case_insensitive_keys = [:email]
 
-  # Configure which authentication keys should have whitespace stripped.
-  # These keys will have whitespace before and after removed upon creating or
-  # modifying a user and when used to authenticate or find a user. Default is :email.
   config.strip_whitespace_keys = [:email]
 
   # Tell if authentication through request.params is enabled. True by default.
@@ -114,7 +106,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'ebb1f1b7ea5db5a5a14923beb776096d9c7155aa2a15ca0e737fbd2464b5fd461273b9f3f21087baa4c127ee5aa52b03463c76448a7fc31617540dd10e7d689e'
+  # config.pepper = 'f9bcf9bbc83e86846b2b40d99bb140d38262a9e9a045fd5b3fc8db79966b27311a65295d0d82be4fe000618704e5b221a67b467eb86e400768ef8faa17364763'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -145,11 +137,11 @@ Devise.setup do |config|
   config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
-  config.confirmation_keys = [:email]
+  # config.confirmation_keys = [:email]
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
-  config.remember_for = 2.weeks
+  # config.remember_for = 2.weeks
 
   # Invalidates all the remember me tokens when the user signs out.
   config.expire_all_remember_me_on_sign_out = true
@@ -204,7 +196,7 @@ Devise.setup do |config|
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering the password for an account
-  config.reset_password_keys = [:email]
+  # config.reset_password_keys = [:email]
 
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
@@ -239,24 +231,22 @@ Devise.setup do |config|
   # only the current scope. By default, Devise signs out all scopes.
   # config.sign_out_all_scopes = true
 
-  # ==> Navigation configuration
-  # Lists the formats that should be treated as navigational. Formats like
-  # :html, should redirect to the sign in page when the user does not have
-  # access, but formats like :xml or :json, should return 401.
-  #
-  # If you have any extra navigational formats, like :iphone or :mobile, you
-  # should add them to the navigational formats lists.
-  #
-  # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html]
-
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
+  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+
+  # ==> Warden configuration
+  # If you want to use other strategies, that are not supported by Devise, or
+  # change the failure app, you can configure them inside the config.warden block.
+  #
+  # config.warden do |manager|
+  #   manager.intercept_401 = false
+  #   manager.default_strategies(scope: :user).unshift :some_external_strategy
+  # end
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
@@ -265,17 +255,13 @@ Devise.setup do |config|
   #
   #     mount MyEngine, at: '/my_engine'
   #
-  # The router that invoked `devise_for`, in the example above, would be:
-  # config.router_name = :my_engine
-  #
-  # When using OmniAuth, Devise cannot automatically set OmniAuth path,
-  # so you need to do it manually. For the users scope, it would be:
-  # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  # ==> Turbolinks configuration
-  # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
-  #
-  # ActiveSupport.on_load(:devise_failure_app) do
-  #   include Turbolinks::Controller
-  # end
+  config.jwt do |jwt|
+    jwt.secret = Rails.application.credentials.devise_jwt_secret_key
+  end
+
+  config.navigational_formats = ['*/*', "/", :html, :json]
+  config.warden do |manager|
+    manager.failure_app = DeviseRespondJson
+  end
 end

@@ -11,9 +11,8 @@ export default class Home extends Component {
       <div>
         <br/>
         <UncontrolledCarousel/>
-        <br/>
         <div className="bible-teachings"><br/><br/>
-          <h2>Practical Bible Teachings</h2><br/>
+          <h2>Practical Bible Teachings</h2>
           <h1>In the month of {thisMonth}</h1>
           <div className="videos-container">
             <div className="videos">

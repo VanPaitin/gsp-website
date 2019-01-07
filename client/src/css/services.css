@@ -4,8 +4,12 @@
   letter-spacing: 0.1em;
   line-height: 2em;
   font-size: 150%;
-  margin-left: 15%;
+  margin-left: 25%;
   margin-right: 15%;
+}
+
+.services-text ul {
+  list-style: none;
 }
 
 .monthly-programmes {

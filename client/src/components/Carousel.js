@@ -2,7 +2,7 @@ import React from 'react';
 import { UncontrolledCarousel } from 'reactstrap';
 import welcome from '../images/welcome.png'
 import secondSlide from '../images/secondSlide.png'
-import couplesDinner from '../images/couplesDinner.png'
+import Jibodu from '../images/Jibodu.png'
 import '../css/Carousel.css'
 
 const items = [
@@ -19,10 +19,9 @@ const items = [
     // header: 'Halleluyah'
   },
   {
-    src: couplesDinner,
+    src: Jibodu,
     altText: 'Slide 3',
-    caption: 'Slide 3',
-    header: 'Slide 3 Header'
+    caption: ''
   }
 ];
 
