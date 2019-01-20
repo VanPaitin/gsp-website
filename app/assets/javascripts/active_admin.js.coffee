@@ -1,4 +1,4 @@
-#= require active_admin/base
+#= require arctic_admin/base
 
 document.addEventListener 'DOMContentLoaded', (event) ->
   parent = document.getElementById('album_pictures_input')

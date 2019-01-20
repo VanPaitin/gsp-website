@@ -283,7 +283,9 @@ ActiveAdmin.setup do |config|
   # override the content of the footer here.
   #
   # config.footer = 'my custom footer text'
-
+  meta_tags_options = { viewport: 'width=device-width, initial-scale=1' }
+  config.meta_tags = meta_tags_options
+  config.meta_tags_for_logged_out_pages = meta_tags_options
   # == Sorting
   #
   # By default ActiveAdmin::OrderClause is used for sorting logic

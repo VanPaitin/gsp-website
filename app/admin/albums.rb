@@ -27,10 +27,13 @@ permit_params :event, :date, pictures: []
   end
 
   show title: :event do
-    h3 album.date
+    h3 album.date.strftime("%A, %B %-d, %Y")
 
     album.pictures.each do |picture|
-      div image_tag picture.variant(resize: '200 x 200').processed
+      div class: 'grid-item' do
+        div image_tag picture.variant(resize: '200 x 200').processed
+        div link_to('Delete', album_picture_path(album, picture), method: :delete, data: { confirm: 'Do you really want to delete the picture' })
+      end
     end
   end
 end
