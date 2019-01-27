@@ -7,7 +7,7 @@ import Services from './components/Services';
 import Giving from './components/Giving';
 import Members from './components/Members';
 import WatchLive from './components/WatchLive';
-import Media from './components/Media'
+import Media from './components/media/Media';
 // import firstPage from "./images/firstPage.jpg";
 // import secondPage from "./images/secondPage.jpg";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,7 +24,7 @@ class App extends Component {
           <Route path='/services' component={Services} />
           <Route path='/live' component={WatchLive} />
           <Route path='/giving' component={Giving} />
-          <Route path='/media' component={Media}/>
+          <Route path='/media/' component={Media}/>
           <Route path='/members' component={Members} />
         </div>
 

@@ -2,6 +2,8 @@ class Album < ApplicationRecord
   validate :ensure_pictures
   has_many_attached :pictures
 
+  paginates_per 3
+
   private
 
   def ensure_pictures
