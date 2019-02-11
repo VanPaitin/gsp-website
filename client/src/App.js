@@ -17,17 +17,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <Route path='/' component={NavigationBar} />
-          <Route path='/' exact={true} component={Home} />
-          <Route path='/about' component={About} />
-          <Route path='/services' component={Services} />
-          <Route path='/live' component={WatchLive} />
-          <Route path='/giving' component={Giving} />
-          <Route path='/media/' component={Media}/>
-          <Route path='/members' component={Members} />
-        </div>
-
+        <Route path='/' component={NavigationBar} />
+        <Route path='/' exact={true} component={Home} />
+        <Route path='/about' component={About} />
+        <Route path='/services' component={Services} />
+        <Route path='/live' component={WatchLive} />
+        <Route path='/giving' component={Giving} />
+        <Route path='/media/' component={Media}/>
+        <Route path='/members' component={Members} />
         {/*<img src={firstPage} alt="The Good Shepherd" className="cover-page"/>*/}
         {/*<img src={secondPage} alt="God's Special People" className="cover-page"/>*/}
       </div>

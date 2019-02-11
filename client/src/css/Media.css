@@ -1,0 +1,91 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.album-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.album-wrapper h4 {
+  background: rgba(0, 0, 102, 0.3);
+  border-radius: 5px;
+  padding: 5px;
+  min-width: 50vw;
+  width: 100%;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.album-wrapper h4 svg.fa-w-10 {
+  border: 1px solid;
+  border-radius: 50%;
+  width: 25px;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+  background: #6d7fcc;
+  transition: all 0.3s;
+  padding-top: 1em;
+}
+
+#sidebar a {
+  padding-left: 1em;
+  width: 250px;
+  display: block;
+  color: #fff;
+  font-size: 35px;
+  font-family: serif;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+}
+
+#sidebar .media-active {
+  background: #fff;
+  color: #7386D5;
+}
+
+.gallery-content {
+  margin-top: 1em;
+}
+
+.slide-enter.slide-enter-active {
+  height: 200px;
+}
+
+.ReactGridGallery.slide-enter-done {
+  height: auto;
+  overflow: visible;
+}
+
+.ReactGridGallery {
+  height: 0;
+  overflow: hidden;
+  transition: height 600ms linear;
+}
+
+.slide-exit {
+  height: 200px;
+}
+
+.slide-exit.slide-exit-active {
+  height: 0;
+}

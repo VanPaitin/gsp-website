@@ -1,5 +1,7 @@
 ul.navbar {
   background: brown;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 ul.navbar .nav-item a {
@@ -7,4 +9,13 @@ ul.navbar .nav-item a {
   color: #FFFFFF;
   font-weight: bolder;
   font-family: serif;
+}
+
+ul.navbar li.nav-item .active {
+  color: brown;
+  background: #FFFFFF;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

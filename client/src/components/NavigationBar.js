@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { NavLink as Link } from 'react-router-dom';
 import logo from '../images/gspLogo.png'
 import '../css/NavigationBar.css'
 
@@ -12,7 +12,7 @@ export default class NavigationBar extends Component {
           <Nav className='justify-content-center navbar'>
             <NavLink tag={Link} to="/" className="logo"><img src={logo} alt="logo" style={{width: '50px', height: '40px'}}/></NavLink>
             <NavItem>
-              <NavLink tag={Link} to="/">Home</NavLink>
+              <NavLink tag={Link} to="/" exact={true}>Home</NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={Link} to='/about'>About Us</NavLink>
