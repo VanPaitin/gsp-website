@@ -32,7 +32,7 @@ permit_params :event, :date, pictures: []
     album.pictures.each do |picture|
       div class: 'grid-item' do
         div image_tag picture.variant(resize: '200 x 200').processed
-        div link_to('Delete', album_picture_path(album, picture), method: :delete, data: { confirm: 'Do you really want to delete the picture' })
+        div link_to('Delete', picture_path(picture, record_type: 'album', record_id: album.id), method: :delete, data: { confirm: 'Do you really want to delete the picture' })
       end
     end
   end

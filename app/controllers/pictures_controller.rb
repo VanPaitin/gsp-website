@@ -3,6 +3,6 @@ class PicturesController < ApplicationController
     ActiveStorage::Attachment.find(params[:id]).purge
     flash[:notice] = 'Picture successfully deleted!'
 
-    redirect_to admin_album_path(params[:album_id])
+    redirect_to send("admin_#{params[:record_type]}_path", params[:record_id])
   end
 end
