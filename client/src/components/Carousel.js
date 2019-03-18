@@ -1,28 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { UncontrolledCarousel } from 'reactstrap';
+import { get } from '../lib/requestClient';
 import welcome from '../images/welcome.png'
 import secondSlide from '../images/secondSlide.png'
-import Jibodu from '../images/Jibodu.png'
 import '../css/Carousel.css'
 
-const items = [
-  {
-    src: welcome,
-    // altText: 'Slide 1',
-    caption: '',
-    // header: 'God bless you'
-  },
-  {
-    src: secondSlide,
-    altText: 'Slide 2',
-    caption: '',
-    // header: 'Halleluyah'
-  },
-  {
-    src: Jibodu,
-    altText: 'Slide 3',
-    caption: ''
-  }
-];
+export default class Carousel extends Component {
+  constructor(props) {
+    super(props);
 
-export default () => <UncontrolledCarousel items={items} />;
+    this.state = {
+      programs: [welcome, secondSlide]
+    }
+  }
+
+  componentDidMount() {
+    get('/programs').then(programs => {
+      this.setState({programs: [...this.state.programs, ...programs]})
+    })
+  }
+
+  formatImages() {
+    return this.state.programs.map(program => {
+      return { src: program, caption: '' }
+    })
+  }
+
+  render() {
+    return <UncontrolledCarousel items={this.formatImages()} />
+  }
+}
