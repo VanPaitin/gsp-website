@@ -1,0 +1,2 @@
+class LiveProgram < ApplicationRecord
+end

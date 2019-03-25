@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'live_programs/show'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
     resources :albums, only: :index
     resources :pictures, only: :destroy
     resources :programs, only: :index
+    resource :live_program, only: :show
   end
 
   get '*path', to: "application#fallback_index_html", constraints: ->(request) do
